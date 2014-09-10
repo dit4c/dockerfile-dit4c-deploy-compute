@@ -10,10 +10,6 @@ then
     exit 1
 fi
 
-docker pull dit4c/dit4c-container-base:latest
-docker pull dit4c/dit4c-container-ipython:latest
-docker pull dit4c/dit4c-container-rstudio:latest
-
 # Create gatehouse and machineshop servers
 docker run -d --name dit4c_gatehouse \
     -p 80:80 \
@@ -28,3 +24,7 @@ docker run -d --name dit4c_machineshop \
     -e PORTAL_URL=$PORTAL_URL \
     -v $DOCKER_SOCKET:$DOCKER_SOCKET \
     dit4c/dit4c-platform-machineshop
+
+docker pull dit4c/dit4c-container-base:latest
+docker pull dit4c/dit4c-container-ipython:latest
+docker pull dit4c/dit4c-container-rstudio:latest
