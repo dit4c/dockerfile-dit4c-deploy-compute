@@ -28,3 +28,4 @@ docker run -d --name dit4c_machineshop \
 docker pull dit4c/dit4c-container-base:latest
 docker pull dit4c/dit4c-container-ipython:latest
 docker pull dit4c/dit4c-container-rstudio:latest
+docker pull dit4c/dit4c-container-ijulia:latest
