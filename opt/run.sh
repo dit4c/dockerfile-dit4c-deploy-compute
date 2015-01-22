@@ -23,6 +23,7 @@ docker start dit4c_gatehouse || \
 docker start dit4c_machineshop || \
   docker run -d --name dit4c_machineshop \
     -p 8080:8080 \
+    -v /opt/dit4c-machineshop:/etc/dit4c-machineshop \
     -v /var/log/dit4c_machineshop/supervisor:/var/log/supervisor \
     -e PORTAL_URL=$PORTAL_URL \
     -v $DOCKER_SOCKET:$DOCKER_SOCKET \
