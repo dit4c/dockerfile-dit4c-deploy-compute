@@ -16,7 +16,7 @@ fi
 docker start dit4c_gatehouse || \
   docker run -d --name dit4c_gatehouse \
     -e PORTAL_URL=$PORTAL_URL \
-    -v $DOCKER_SOCKET:$DOCKER_SOCKET \
+    -v $DOCKER_SOCKET:$DOCKER_SOCKET:z \
     dit4c/dit4c-platform-gatehouse:$DIT4C_VERSION
 
 docker start dit4c_machineshop || \
@@ -24,7 +24,7 @@ docker start dit4c_machineshop || \
     -v /opt/dit4c-machineshop:/etc/dit4c-machineshop \
     -v /var/log/dit4c_machineshop/supervisor:/var/log/supervisor \
     -e PORTAL_URL=$PORTAL_URL \
-    -v $DOCKER_SOCKET:$DOCKER_SOCKET \
+    -v $DOCKER_SOCKET:$DOCKER_SOCKET:z \
     dit4c/dit4c-platform-machineshop:$DIT4C_VERSION
 
 docker start dit4c_cnproxy || \
