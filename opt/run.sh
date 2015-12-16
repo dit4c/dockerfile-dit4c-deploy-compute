@@ -41,8 +41,7 @@ docker start dit4c_gatehouse || \
 docker start dit4c_machineshop || \
   docker run -d --name dit4c_machineshop \
     --net=$DOCKER_NETWORK \
-    -v /opt/dit4c-machineshop:/etc/dit4c-machineshop \
-    -v /var/log/dit4c_machineshop/supervisor:/var/log/supervisor \
+    -v /opt/dit4c-machineshop:/etc/dit4c-machineshop:Z \
     -e PORTAL_URL=$PORTAL_URL \
     -e DOCKER_HOST=$DOCKER_HOST \
     $DOCKER_VOLUME_BINDS \
