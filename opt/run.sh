@@ -53,6 +53,6 @@ docker start dit4c_cnproxy || \
     -p ${PROXY_PORT}:8080 \
     --net=$DOCKER_NETWORK \
     --add-host=gatehouse:$(dockerIP dit4c_gatehouse) \
-    --add-host=gatehouse:$(dockerIP dit4c_machineshop) \
+    --add-host=machineshop:$(dockerIP dit4c_machineshop) \
     -e PORTAL_URL=$PORTAL_URL \
     dit4c/dit4c-platform-cnproxy
