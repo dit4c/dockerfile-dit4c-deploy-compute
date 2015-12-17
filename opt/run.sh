@@ -35,6 +35,7 @@ docker start dit4c_gatehouse || \
     --net=$DOCKER_NETWORK \
     -e PORTAL_URL=$PORTAL_URL \
     -e DOCKER_HOST=$DOCKER_HOST \
+    -e DOCKER_TLS_VERIFY=${DOCKER_TLS_VERIFY:-0} \
     $DOCKER_VOLUME_BINDS \
     dit4c/dit4c-platform-gatehouse:$DIT4C_VERSION
 
@@ -44,6 +45,7 @@ docker start dit4c_machineshop || \
     -v /opt/dit4c-machineshop:/etc/dit4c-machineshop:Z \
     -e PORTAL_URL=$PORTAL_URL \
     -e DOCKER_HOST=$DOCKER_HOST \
+    -e DOCKER_TLS_VERIFY=${DOCKER_TLS_VERIFY:-0} \
     $DOCKER_VOLUME_BINDS \
     dit4c/dit4c-platform-machineshop:$DIT4C_VERSION
 
